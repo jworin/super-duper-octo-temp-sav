@@ -1,0 +1,3 @@
+/home/yze/gomi/projForDev/webserv/cmake-build-debug/CMakeFiles/webserv.dir
+/home/yze/gomi/projForDev/webserv/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/yze/gomi/projForDev/webserv/cmake-build-debug/CMakeFiles/rebuild_cache.dir
