@@ -2,6 +2,10 @@
 #define LOG_H
 
 #include <iostream>
+#include <cstring>
+#include <cstdio>
+#include <sys/time.h>
+#include <stdarg.h>
 #include "../lock/locker.h"
 
 class Log {
