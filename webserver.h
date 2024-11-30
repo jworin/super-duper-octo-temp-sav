@@ -7,6 +7,9 @@
 #include <iostream>
 #include <cstring>
 
+#include "CGImysql/sql_connection_pool.h"
+#include "log/log.h"
+
 const int MAX_FD = 1020;
 const int MAX_EVENT_NUMBER = 10000;
 const int TIMESLOT = 5;

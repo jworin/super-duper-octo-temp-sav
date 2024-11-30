@@ -1,5 +1,6 @@
 #include "config.h"
 
+
 Config::Config(){
   PORT = 9006;
   LOGWrite = 0;

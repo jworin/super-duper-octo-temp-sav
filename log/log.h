@@ -6,6 +6,7 @@
 #include <cstdio>
 #include <sys/time.h>
 #include <stdarg.h>
+#include "block_queue.h"
 #include "../lock/locker.h"
 
 class Log {

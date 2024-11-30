@@ -25,7 +25,7 @@ WebServer::~WebServer(){
   delete m_pool;
 }
 
-void WebServer::init(int port, std::string user, std:string passWord, std::string databaseName, int log_write,
+void WebServer::init(int port, std::string user, std::string passWord, std::string databaseName, int log_write,
                      int opt_linger, int trigmode, int sql_num, int thread_num, int close_log, int actor_model){
     m_port = port;
     m_user = user;
@@ -39,6 +39,28 @@ void WebServer::init(int port, std::string user, std:string passWord, std::strin
     m_close_log = close_log;
     m_actormodel = actor_model;
 }
+
+void WebServer::log_write()
+{
+    if (0 == m_close_log) {
+        if (1 == m_log_write) {
+            Log::get_instance()->init("./ServerLog", m_close_log, 2000, 800000, 800);
+        } else {
+            Log::get_instance()->init("./ServerLog", m_close_log, 2000, 800000, 0);
+        }
+    }
+}
+
+void WebServer::sql_pool() {
+    m_connPool = connection_pool::GetInstance();
+    m_connPool->init("127.0.0.1", m_user, m_passWord, m_databaseName, 3306, m_sql_num, m_close_log);
+
+    users->initmysql_result(m_connPool);
+}
+
+
+
+
 
 void WebServer::trig_mode(){
 
