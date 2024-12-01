@@ -10,6 +10,8 @@
 #include <fcntl.h>
 #include <sys/epoll.h>
 #include <unistd.h>
+#include <netinet/in.h>
+#include <sys/mman.h>
 
 class http_conn{
 public:
@@ -57,7 +59,7 @@ public:
     ~http_conn() {}
 
 public:
-    void init(int sockfd, const sockaddr_in &addr, char *, int, int, std::string user, std::string passwd, std::string sqlname);
+    void init(int sockfd, const sockaddr_in &addr, char *root, int TRIGMode, int close_log, std::string user, std::string passwd, std::string sqlname);
     void close_conn(bool real_close = true);
     void process();
     bool read_once();
