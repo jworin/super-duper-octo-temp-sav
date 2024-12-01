@@ -4,6 +4,13 @@
 #include <ctime>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <fcntl.h>
+#include <sys/epoll.h>
+#include <cerrno>
+#include <csignal>
+#include <cstring>
+#include <assert.h>
+#include "../http/http_conn.h"
 
 class util_timer;
 

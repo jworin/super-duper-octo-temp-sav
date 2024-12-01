@@ -15,4 +15,5 @@ add_executable(webserv main.cpp
         threadpool/threadpool.h
         http/http_conn.h
         http/http_conn.cpp
-        timer/lst_timer.h)
+        timer/lst_timer.h
+        timer/lst_timer.cpp)
